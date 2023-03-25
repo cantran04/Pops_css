@@ -1,0 +1,132 @@
+@media screen and (max-width: 1200px) {
+    .header nav{
+        display: none;
+    }
+    .header-right{
+        width: 65%;
+    }
+
+
+    .header #bars-btn{
+        display: block;
+    }
+
+    .show-adult{
+        right: 9rem;
+     }
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        flex-direction: column;
+        height: 120px;
+        align-items: flex-start;
+     }
+     .header .header-right{
+         width: 100%;
+         justify-content: flex-end;
+     }
+     .show-adult{
+        top: 142px;
+     }
+
+     .menu-dropdown{
+        top: 12rem;
+     }
+
+     .main {
+        padding-top: 80vh;
+    }
+     .main section{
+        margin: 2rem 6rem;
+    }
+
+    .footer .footer-top{
+    grid-template-columns: 48% 48%;
+    gap: 3%;
+    }
+    .footer .footer-bottom{
+        grid-template-columns: 100%;
+    }
+    .footer .footer-bottom img{
+        margin-top: 2rem;
+    }
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 2rem 2rem;
+    }
+
+    .show-adult{
+        right: 2rem;
+    }
+    .show-adult::before{
+        right: 4.5rem;
+    }
+
+    .menu-dropdown{
+        right: 2rem;
+     }
+
+     
+    .wrapper-slide{
+        height: 70vh;
+    }
+    .slide-banner  .slick-dots {
+        display: none;
+    }
+
+    .main {
+        padding-top: 50vh;
+    }
+    .main section{
+        margin: 2rem 2rem;
+    }
+
+    .slide-s1 img{
+        width: 200px;
+    }
+
+    .slick-prev{
+        top: -3rem;
+        right: 6rem;
+    }
+    .slick-next{
+        top: -3rem;
+        right: 2rem;
+    }
+    .footer .footer-top{
+        grid-template-columns: 100%;
+    }
+
+    .banner-qc2 .wp{
+    grid-template-columns: 100%;
+
+    }
+    .banner-qc2 h3{
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 439px) {
+    .header {
+        padding: 2rem 0.5rem;
+    }
+    .wrapper-slide{
+        height: 50vh;
+    }
+
+    .slide-banner #detail{
+        bottom:30%;
+    }
+    .main {
+    padding-top: 30vh;
+    }
+
+    
+    
+}

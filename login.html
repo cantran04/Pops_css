@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css/setting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css/log_regis.css">
+    <link rel="stylesheet" href="style.css/media.css">
+    
+</head>
+<body>
+    <section class="container">
+        <div class="logo">
+            <a href="index.html">
+            <img src="assets/images/logo-pops.png" alt="">
+            </a>
+        </div>
+        <form action="">
+            <h2>Login</h2>
+            <p>You can sign in with a POPS or POPS Kids account. </p>
+            <div class="input">
+                <div>
+                    <input type="text" placeholder="Enter a phone number or email" id="email-input">
+                </div>
+                <span id="error-span"  class="error-span"></span>
+                <div>
+                    <input type="password" placeholder="Password" id="password-input">
+                    <i class="fa-solid fa-eye" id="toggle-password"></i>
+                    <!-- <i class="fa-solid fa-eye-slash"></i> -->
+                </div>
+                <span id="error-span"  class="error-span"></span>
+                <button>LOGIN</button>
+            </div>
+            <a href="">Forgot your password?</a>
+            <div class="qr-code flex">
+                <img src="assets/images/qr-code.png" alt="">
+                <a href="">Quick login with QR code</a>
+            </div>
+            <div class="flex" style="width: 100%;">
+                <hr>
+                <span>or Continue with</span>
+                <hr>
+            </div>
+            <div class="icons">
+                <a href=""><img src="assets/images/fb-icon.jpg" alt=""></a>
+                <a href=""><img src="assets/images/gg-icon.jpg" alt=""></a>
+            </div>
+            
+            <div>
+                <span>Don't have an account yet?</span>
+                <a href="register.html"> Register</a>
+            </div>
+        </form>
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+        
+        const emailInput = document.getElementById('email-input');
+        const errorSpans = document.querySelectorAll('#error-span');
+        const passwordInput = document.getElementById('password-input');
+        console.log(emailInput,passwordInput,errorSpans);
+
+        // tạo hàm check form
+        function checkForm() {
+            // nếu ô input có dữ liệu rỗng (trim: cắt khoảng trắng hai đầu)
+            if (emailInput.value.trim() === '') {
+                // in text content vào thể span
+                errorSpans[0].textContent = 'Please enter a phone number or email';
+            } else {
+                errorSpans[0].textContent = '';
+            }
+
+            if (passwordInput.value.trim() === '') {
+                errorSpans[1].textContent = 'Please enter a password';
+            } else {
+                errorSpans[1].textContent = '';
+            }
+        }
+    // gọi hàm dùng blur để khi ô input mất trạng thái focus sự kiện blur sẽ được kích hoạt hàm checkform
+        emailInput.addEventListener('blur', checkForm);
+        passwordInput.addEventListener('blur', checkForm);   
+
+
+// ========================
+    // const passwordInput = document.getElementById('password-input');
+    const togglePassword = document.getElementById('toggle-password');
+
+    // khi click vào bars 
+    togglePassword.addEventListener('click', function() {
+        // thông qua getAttribute để biết kiểu type nhập vào trong thẻ inputPassword
+        // nếu trong nhập vào trong ô là kiểu định dạng password(dạng chấm ẩn) thì gán giá trị là text
+        // ngược lại nếu nhập vào là kiểu text thì gán cho type = password;
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    //dungf setAttribute set kiểu type lại cho o password
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye-slash');
+    this.classList.toggle('fa-eye');
+    });
+    </script>
+
+
+
+</body>
+</html>
